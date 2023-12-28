@@ -1,0 +1,63 @@
+Bases de go 
+
+url de interes 
+* https://go.dev/doc/effective_go // Buenas practicas
+* https://go.dev/doc/effective_go#names
+
+Todo es camel case "HolaEstoEsCamelCase"
+
+un package se declara asi:
+app/calculator/sum.go
+    package calculator
+
+    func sum(num1 int, num2 int) int {
+
+    }
+
+go build .\main
+
+go run .\app\cmd\main.go // compilar y ejecutar en una sola linea de codigo
+
+* Diferencias entre crear aplicaciones al momento de programar y crear scripts
+
+package main
+
+func main() {
+    var name string = "Nel Alejandro Mora Pinto"
+
+    var variable string = "" == var variable string
+    var variableBool bool = true  
+
+}
+
+Url para saber cual es el valor que inicializa cada tipo de dato (zero values)
+* https://go.dev/tour/basics/12
+* https://exercism.org/tracks/go/concepts/zero-values
+
+bool = false 
+int = 0
+string = ""
+float64 
+
+
+Inferencia de tipos 
+    var age = 17
+    age := 17
+
+go mod = pip = npm 
+
+go.mod
+    module app
+
+// inicializar un package.json en go
+go mod init app
+go get -u "url github"
+go mod tidy // resume las librerias intaladas 
+
+// Pasos desde creo
+go mod init "repo en github" "github.com/Neko.."
+go mod tidy // trae las dependencias declaradas en go.mod (Gestiona, ordena, actualiza las dependencias)
+go run .\cmd\main.go // Corremos el programa 
+
+// cmd/main.go punto de entrada
+go get -u "github.com/kskkssd@v1.0.0" // Una version en especifico
