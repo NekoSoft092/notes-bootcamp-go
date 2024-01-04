@@ -99,7 +99,7 @@ func forFunc() {
 	namesSlice[1] = "Alejandro"
 	namesSlice[2] = "Mora" //cap(names) -> capacidad
 
-	append(namesSlice, "Pinto", "Elemento adicin")
+	namesSlice = append(namesSlice, "Pinto", "Elemento adicin")
 	fmt.Println("Nuevo array con append", namesSlice)
 
 	// Maps key -> value (como un json)
@@ -114,6 +114,63 @@ func forFunc() {
 		}*/
 }
 
+//------------------
+// Repaso
+//------------------
+
+// Arrays en go (De tamaño fijo)
+func arraysExample() {
+	// Def: Es una coleccion de items del mismo tipo de datos que se almacenan de forma contigua en la memoria
+	// Def
+	var a [2]string
+
+	// asignacion de valores en el array
+	a[0] = "Primer item"
+	a[1] = "Segundo item"
+
+	// Obtener valores
+	fmt.Println("Primero: "+a[0], "Segundo: "+a[1])
+
+}
+
+// Slices en go (De tamaño variable)
+func sliceExample() {
+	// Def: Los slices nos permiten almacenar un conjunto de datos homogeneo
+	// es decir, todos ellos del mismo tipo
+
+	// Go se encarga del tamaño dinamicamente
+	var s []string        // Declaracion del slice
+	s = make([]string, 6) // Inicializacion del slice en memoria len(s)=6
+	fmt.Println("El tamaño del slice es ", len(s))
+
+	// Obtener un rango
+	fmt.Println("Rango de los 4 primeros elementos ", s[1:4])
+
+	// Obtener un valor del slice
+	fmt.Println("Primer valor del slice ", s[0])
+
+	// Propiedades de un slice
+	// Longitud (len): El numero de elementos que contiene
+	// Capacidad (cap): El numero de elementos del array subyacente, contando desde el primer elemento del segmento
+
+	// Agregar a un slice
+	s = append(s, "Nuevo elemento 1", "Nuevo elemento 2")
+
+}
+
+func mapExample() {
+	// Def: Los maps nos permiten crear variables de tipo clave -> valor, definiendo un tipo de dato para las
+	// claves y uno para los valores
+
+	mymap1 := map[string]int{}     // Declaracion forma 1
+	mymap2 := make(map[string]int) // Declaracion forma 2
+
+	// La funcion de make nos sirve para inicializarlo pero no podremos introducir datos en la misma sentencia de inicializacion
+	fmt.Println("El tamaño de mymap1 es ", len(mymap1))
+	fmt.Println("El tamaño de mymap2 es ", len(mymap2))
+}
+
+// Main function
 func main() {
 	condicionales()
 	switchFunc()
